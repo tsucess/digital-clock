@@ -1,5 +1,5 @@
 
-![Project Image Link](https://github.com/tsucess/digital-clock/images/interface.png)
+![Project Image Link](https://github.com/tsucess/digital-clock/blob/main/images/interface.png)
 
 
 # AUTHOR:
@@ -23,3 +23,7 @@
 * Google Chrome
 * Mozilla Firefox
 * Microsoft Edge
+
+
+
+
