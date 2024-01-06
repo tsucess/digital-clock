@@ -13,11 +13,37 @@
 }
 
 
-.wrapper {
+.bg-dark {
 	background-image: url("../images/bg-image.jpg");
 	background-size: cover;
 	background-position: center;
 	background-repeat: none;
+	position: absolute;
+	top: 0;
+	height: 100vh;
+	width: 100%;
+	z-index: 0;
+}
+.bg-weather {
+	position: absolute;
+	top: 0;
+	width: 100%;
+	height: 100vh;
+	z-index: 1;
+	opacity: 0.6;
+}
+
+.bg-evening{
+	background: #ff9100;
+	opacity: 0.5;
+}
+
+.bg-night{
+	background: #000000;
+	opacity: 0.4;
+}
+
+.wrapper {
 	width: 100%;
 	height: 100vh;
 	display: flex;
@@ -25,6 +51,8 @@
 	align-items: center;
 	align-content: center;
 	justify-content: center;
+	position: relative;
+	z-index: 2;
 }
 
 h1 {
@@ -37,6 +65,7 @@ h1 {
 
 p {
 	font-family: 'Gugi', sans-serif;
+	text-shadow: 0.1rem 0.2rem 0.5rem #000000;
 }
 .frame {
 	 background-color: #000000;

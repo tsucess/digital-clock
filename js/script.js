@@ -7,7 +7,10 @@ separator = document.querySelectorAll('.separator'),
 min = $('.min'),
 sec = $('.sec'),
 days = $('.days');
-prds = $('.period');
+
+
+let prds = $('.period');
+let weather = $('.bg-weather');
 
 let showSep = true;
 
@@ -27,10 +30,30 @@ separator.forEach ( dot => {
 	});
 
 	let hr = now.getHours();
-	console.log(hr);
 
-	if (hr > 12 ) {
-		hour.textContent = String(hr - 12).padStart(2,'0');
+	if (hr >= 4) {
+		weather.classList.remove('bg-night');
+		weather.classList.add('bg-evening');
+	} 
+	else if (hr >= 7) 
+	{
+		weather.classList.add('bg-night');
+		weather.classList.remove('bg-evening');
+	}
+	else 
+	{
+		weather.classList.remove('bg-night');
+		weather.classList.remove('bg-evening');
+	}
+
+	if (hr >= 12 ) {
+		if (hr > 12 ){
+			hour.textContent = String(hr - 12).padStart(2,'0');
+		}
+		else 
+		{
+			hour.textContent = String(now.getHours()).padStart(2, '0');
+		}
 		prds.textContent = "pm";
 	}
 	else {
@@ -47,5 +70,4 @@ separator.forEach ( dot => {
 
 	days.children[now.getDay()].classList.add('active');
 };
-
 setInterval(update, 500);
