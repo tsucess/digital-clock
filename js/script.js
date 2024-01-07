@@ -10,7 +10,7 @@ days = $('.days');
 
 
 let prds = $('.period');
-let weather = $('.bg-weather');
+let weather = $('.bg-dark');
 
 let showSep = true;
 
@@ -31,19 +31,31 @@ separator.forEach ( dot => {
 
 	let hr = now.getHours();
 
-	if (hr >= 4) {
+	if (hr >= 8) {
 		weather.classList.remove('bg-night');
-		weather.classList.add('bg-evening');
+		weather.classList.remove('bg-early-morning');
+		weather.classList.add('bg-morning');
 	} 
-	else if (hr >= 7) 
+	else if (hr >= 11) {
+		weather.classList.remove('bg-morning');
+		weather.classList.add('bg-noon');
+	} 
+	else if (hr >= 16) 
 	{
-		weather.classList.add('bg-night');
+		weather.classList.remove('bg-noon');
+		weather.classList.add('bg-evening');
+	}
+	else if (hr >= 20) 
+	{
 		weather.classList.remove('bg-evening');
+		weather.classList.add('bg-night');
 	}
 	else 
 	{
-		weather.classList.remove('bg-night');
+		weather.classList.remove('bg-morning');
+		weather.classList.remove('bg-noon');
 		weather.classList.remove('bg-evening');
+		weather.classList.remove('bg-night');
 	}
 
 	if (hr >= 12 ) {
